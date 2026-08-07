@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 628" width="1200" height="628" role="img" aria-label="농어업재해 손해평가사 국가자격 안내 광고 이미지">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2f7ab8"/>
+      <stop offset="55%" stop-color="#7db6dd"/>
+      <stop offset="100%" stop-color="#c9e6f5"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff3b8" stop-opacity=".9"/>
+      <stop offset="100%" stop-color="#fff3b8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a9c95c"/>
+      <stop offset="55%" stop-color="#c9a94a"/>
+      <stop offset="100%" stop-color="#a37a2c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="628" fill="url(#sky)"/>
+  <circle cx="980" cy="130" r="150" fill="url(#sunGlow)"/>
+  <circle cx="980" cy="130" r="52" fill="#ffe071"/>
+  <circle cx="980" cy="130" r="36" fill="#fff6c8"/>
+
+  <g fill="#ffffff" opacity=".85">
+    <ellipse cx="820" cy="96" rx="56" ry="24"/>
+    <ellipse cx="782" cy="108" rx="36" ry="17"/>
+    <ellipse cx="864" cy="110" rx="34" ry="16"/>
+    <ellipse cx="1130" cy="212" rx="48" ry="20"/>
+    <ellipse cx="1096" cy="220" rx="30" ry="14"/>
+  </g>
+
+  <!-- 먹구름과 우박(자연재해) -->
+  <g>
+    <ellipse cx="700" cy="104" rx="70" ry="30" fill="#5f7994"/>
+    <ellipse cx="654" cy="118" rx="46" ry="23" fill="#4e6884"/>
+    <ellipse cx="748" cy="118" rx="40" ry="20" fill="#4e6884"/>
+    <g stroke="#dbeaf6" stroke-width="3" stroke-linecap="round" opacity=".85">
+      <path d="M652 150l-8 20"/><path d="M688 158l-8 20"/><path d="M722 150l-8 20"/>
+      <path d="M670 182l-6 15"/><path d="M706 186l-6 15"/>
+    </g>
+  </g>
+
+  <path d="M420 372c130-32 220 6 320-14s190-38 300-14 140 10 200-8v50H420z" fill="#5a9a63"/>
+  <path d="M420 400c150-20 240 12 360-6s200-24 320-6 90 8 120 2v34H420z" fill="#427f4e"/>
+
+  <rect x="0" y="424" width="1200" height="204" fill="url(#field)"/>
+  <g stroke="#8a6524" stroke-width="2.5" opacity=".3">
+    <path d="M380 628L700 426"/><path d="M560 628L800 426"/><path d="M760 628L900 426"/>
+    <path d="M960 628L985 426"/><path d="M1180 628L1080 426"/>
+  </g>
+  <g fill="#8ea83f" opacity=".5">
+    <path d="M0 436h1200v11H0z"/><path d="M0 470h1200v12H0z"/>
+  </g>
+  <g stroke="#7d5a1e" stroke-width="5" stroke-linecap="round" opacity=".55">
+    <path d="M700 610l32-38M760 618l26-42M830 606l34-36"/>
+  </g>
+
+  <!-- 조사원 -->
+  <g transform="translate(1000,570) scale(1.34) translate(-628,-475)">
+    <ellipse cx="648" cy="474" rx="60" ry="12" fill="#7d5a1e" opacity=".35"/>
+    <rect x="628" y="398" width="17" height="72" rx="6" fill="#1d2b3f"/>
+    <rect x="653" y="398" width="17" height="72" rx="6" fill="#26374d"/>
+    <rect x="622" y="462" width="27" height="13" rx="5" fill="#16202e"/>
+    <rect x="649" y="462" width="27" height="13" rx="5" fill="#16202e"/>
+    <path d="M619 336a30 30 0 0 1 60 0v62a10 10 0 0 1-10 10h-40a10 10 0 0 1-10-10z" fill="#e8452c"/>
+    <rect x="641" y="330" width="16" height="78" fill="#f7fafc"/>
+    <g fill="#ffffff" opacity=".8">
+      <rect x="619" y="356" width="60" height="7"/>
+      <rect x="619" y="376" width="60" height="7"/>
+    </g>
+    <path d="M622 344c-14 6-24 16-30 28l16 10c5-9 12-16 20-20z" fill="#f7fafc"/>
+    <circle cx="649" cy="300" r="21" fill="#f5cfa6"/>
+    <path d="M628 296a21 21 0 0 1 42 0z" fill="#16202e"/>
+    <path d="M628 296h-16a5 5 0 0 0 0 10h16z" fill="#16202e"/>
+    <rect x="576" y="352" width="52" height="38" rx="5" fill="#16202e"/>
+    <rect x="581" y="357" width="42" height="28" rx="3" fill="#bfe3f4"/>
+    <g stroke="#16202e" stroke-width="2.5" stroke-linecap="round" opacity=".6">
+      <path d="M587 378l7-8 6 5 9-11"/>
+    </g>
+  </g>
+
+  <!-- 좌측 카피 패널 -->
+  <path d="M0 0h672L592 628H0z" fill="#16202e" opacity=".95"/>
+  <g font-family="-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+    <text x="76" y="196" font-size="30" font-weight="700" fill="#ffd45e" letter-spacing="2">농어업재해</text>
+    <text x="72" y="300" font-size="92" font-weight="800" fill="#ffffff" letter-spacing="-3">손해평가사</text>
+    <rect x="76" y="330" width="116" height="9" rx="4" fill="#e8452c"/>
+    <rect x="72" y="374" width="272" height="60" rx="30" fill="#e8452c"/>
+    <text x="208" y="414" font-size="29" font-weight="800" fill="#ffffff" text-anchor="middle">경력 · 학력 무관</text>
+    <text x="76" y="492" font-size="26" font-weight="600" fill="#e8eff6">피해 현장 조사부터 보상액 산정까지</text>
+    <text x="76" y="532" font-size="26" font-weight="600" fill="#e8eff6">국가자격 취득 과정 무료 상담</text>
+  </g>
+</svg>
