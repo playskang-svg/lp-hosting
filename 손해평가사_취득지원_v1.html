@@ -180,15 +180,11 @@ h2 + .sub{text-align:center;margin-top:10px;font-size:15px;color:var(--body)}
 /* 신청 폼 */
 .apply{background:var(--card);scroll-margin-top:12px}
 .form-slot{
-  margin-top:22px;border:2px dashed #cfd8e4;border-radius:var(--r);
-  background:#f8fafc;padding:26px 18px;text-align:center;
-}
-.form-slot p{font-size:14px;color:#7b8798;line-height:1.7}
-.form-slot code{
-  display:block;margin-top:10px;font-size:12px;color:var(--navy);
-  background:#eef2f7;border-radius:8px;padding:9px;word-break:break-all;
+  margin-top:22px;border:1px solid var(--line);border-radius:var(--r);
+  background:#fff;padding:12px;overflow:hidden;
 }
 .form-slot iframe{width:100%;border:0;display:block}
+.form-slot .adsbytenping{width:100%;margin:0 auto;display:block}
 
 .cta{
   display:block;width:100%;margin-top:20px;background:var(--point);color:#fff;text-align:center;
@@ -236,7 +232,7 @@ footer{background:#e9edf2;padding:22px;text-align:center;font-size:12px;color:#7
   max-height:0;opacity:0;overflow:hidden;
   transition:max-height .32s ease,opacity .25s ease,margin-top .32s ease;
 }
-.dock.is-open .dock-form{max-height:70vh;opacity:1;margin-top:14px}
+.dock.is-open .dock-form{max-height:70vh;opacity:1;margin-top:14px;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .dock-form .form-slot{margin-top:0}
 
 @media (max-width:400px){
@@ -505,13 +501,13 @@ footer{background:#e9edf2;padding:22px;text-align:center;font-size:12px;color:#7
   </div>
   <div class="dock-form" id="dockForm">
     <div class="form-slot">
-      <!-- 텐핑·디비센스 등 제휴 플랫폼의 입력폼 퍼가기 코드를 이 자리에 그대로 붙여넣으세요.
-           예) <iframe src="https://dbsense.kr/js/form/iframe.php?..." height="480" scrolling="no"></iframe>
-           입력폼은 페이지 전체에서 이 한 곳에만 둔다(중복 삽입 금지) -->
-      <p>제휴 플랫폼 입력폼 삽입 영역<code>&lt;iframe src="입력폼_퍼가기_주소" height="480" scrolling="no"&gt;&lt;/iframe&gt;</code></p>
+      <!-- 텐핑 입력폼 — 페이지 전체에서 이 한 곳에만 둔다(중복 삽입 금지) -->
+      <tenping class="adsbytenping" style="width:100%; margin:0 auto; display:block;" tenping-ad-type="CInmlFSNPJoo9rBMK%2brlTg%3d%3d" tenping-ad-client="2%2b6%2bQatzZIWzz1Stk35yznPz7VdY7htnfJ%2ffMWkuBCE2MNmOcEPDKCVjUdU6EejT" tenping-ad-campaign="2025112614190001" tenping-ad-distributionAddID="2026080807520012" tenping-ad-contain_image="false" tenping-ad-contain_logo="false" tenping-ad-contain_Plugin="false" tenping-ad-contain_TpCall="false" tenping-ad-theme="default" tenping-ad-contain_privacy="false"></tenping>
     </div>
   </div>
 </div>
+
+<script async src="//ads.tenping.kr/scripts/adsbytenping.min.js"></script>
 
 <script>
 (function(){
