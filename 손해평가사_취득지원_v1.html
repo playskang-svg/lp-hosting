@@ -146,17 +146,23 @@ h2 + .sub{text-align:center;margin-top:10px;font-size:15px;color:var(--body)}
 .benefit .sub{color:#c3d1e3}
 .blist{margin-top:26px;display:grid;gap:11px;counter-reset:b}
 .bitem{
-  display:flex;gap:14px;align-items:flex-start;
+  display:flex;gap:14px;align-items:center;
   background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
-  border-radius:12px;padding:17px 18px;
+  border-radius:12px;padding:15px 16px;
 }
 .bitem::before{
   counter-increment:b;content:counter(b);
-  flex:none;width:28px;height:28px;border-radius:8px;background:#ffd45e;color:#4a3406;
-  display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;
+  flex:none;width:24px;height:24px;border-radius:7px;background:#ffd45e;color:#4a3406;
+  display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:800;
 }
+.bitem .txt{flex:1;min-width:0}
 .bitem h4{font-size:17px;font-weight:700;letter-spacing:-.4px}
 .bitem p{margin-top:4px;font-size:14px;color:#c3d1e3}
+.bitem .bicon{
+  flex:none;width:50px;height:50px;border-radius:13px;
+  display:flex;align-items:center;justify-content:center;
+}
+.bitem .bicon svg{width:26px;height:26px}
 .caution{margin-top:18px;text-align:center;font-size:13px;color:#ffd45e;font-weight:600}
 
 /* 마감 */
@@ -185,9 +191,9 @@ h2 + .sub{text-align:center;margin-top:10px;font-size:15px;color:var(--body)}
 .form-slot iframe{width:100%;border:0;display:block}
 
 .cta{
-  display:block;margin-top:20px;background:var(--point);color:#fff;text-align:center;
+  display:block;width:100%;margin-top:20px;background:var(--point);color:#fff;text-align:center;
   border-radius:12px;padding:19px;font-size:19px;font-weight:800;letter-spacing:-.5px;
-  text-decoration:none;box-shadow:0 6px 18px rgba(232,69,44,.28);
+  text-decoration:none;border:0;font-family:inherit;cursor:pointer;box-shadow:0 6px 18px rgba(232,69,44,.28);
   transition:transform .12s ease,background .12s ease;
 }
 .cta:active{transform:scale(.985);background:var(--point-dark)}
@@ -203,23 +209,35 @@ h2 + .sub{text-align:center;margin-top:10px;font-size:15px;color:var(--body)}
 .privacy .body dt{font-weight:700;color:var(--ink);margin-top:9px}
 footer{background:#e9edf2;padding:22px;text-align:center;font-size:12px;color:#7b8798;line-height:1.8}
 
-/* 하단 고정 CTA */
+/* 하단 고정 CTA — 평소엔 슬림, "신청하기" 누르면 위로 펼쳐지는 바텀시트 */
 .dock{
   position:fixed;left:0;right:0;bottom:0;z-index:50;
-  background:rgba(255,255,255,.97);border-top:1px solid var(--line);
+  background:rgba(255,255,255,.98);border-top:1px solid var(--line);
   padding:10px 14px calc(10px + env(safe-area-inset-bottom));
   backdrop-filter:saturate(160%) blur(8px);
+  max-height:85vh;overflow-y:auto;
+  box-shadow:0 -4px 24px rgba(16,32,54,.1);
 }
 .dock-in{max-width:520px;margin:0 auto;display:flex;align-items:center;gap:12px}
 .dock-txt{flex:1;min-width:0}
 .dock-txt > b{display:block;font-size:14px;font-weight:800;color:var(--navy);letter-spacing:-.4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .dock-txt > span{display:block;font-size:12.5px;color:var(--point);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .dock-txt > span b{display:inline;font-weight:800}
-.dock a{
-  flex:none;background:var(--point);color:#fff;text-decoration:none;
+.dock-in button{
+  flex:none;background:var(--point);color:#fff;border:0;text-decoration:none;
   border-radius:10px;padding:14px 22px;font-size:16px;font-weight:800;letter-spacing:-.4px;
+  font-family:inherit;cursor:pointer;transition:background .15s ease;
 }
-.dock a:active{background:var(--point-dark)}
+.dock-in button:active{background:var(--point-dark)}
+.dock.is-open .dock-in button{background:var(--navy-soft)}
+
+.dock-form{
+  max-width:520px;margin:0 auto;
+  max-height:0;opacity:0;overflow:hidden;
+  transition:max-height .32s ease,opacity .25s ease,margin-top .32s ease;
+}
+.dock.is-open .dock-form{max-height:70vh;opacity:1;margin-top:14px}
+.dock-form .form-slot{margin-top:0}
 
 @media (max-width:400px){
   section{padding:38px 17px}
@@ -410,10 +428,31 @@ footer{background:#e9edf2;padding:22px;text-align:center;font-size:12px;color:#7
     <p class="sub">이번 회차 신청자에게만 제공됩니다.</p>
 
     <div class="blist">
-      <div class="bitem"><div><h4>최신 합격전략집 제공</h4><p>올해 출제 경향을 반영한 핵심 요약본</p></div></div>
-      <div class="bitem"><div><h4>합격 시 수강료 전액 환급</h4><p>합격하면 낸 돈을 그대로 돌려받습니다</p></div></div>
-      <div class="bitem"><div><h4>단기 합격 노하우 제공</h4><p>한 달 안에 끝내는 학습 로드맵</p></div></div>
-      <div class="bitem"><div><h4>협회 주관 일자리 취업연계</h4><p>취득 후 일감 배정까지 연결</p></div></div>
+      <!-- 아이콘은 자체 제작 SVG(사이트 컬러 팔레트 사용). 특정 사이트·자료를 재현한 것이 아닌 순수 장식용 아이콘 -->
+      <div class="bitem">
+        <div class="txt"><h4>최신 합격전략집 제공</h4><p>올해 출제 경향을 반영한 핵심 요약본</p></div>
+        <div class="bicon" style="background:#b8863b">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5c2-1 5-1 8 .5v13c-3-1.5-6-1.5-8-.5z"/><path d="M20 5.5c-2-1-5-1-8 .5v13c3-1.5 6-1.5 8-.5z"/></svg>
+        </div>
+      </div>
+      <div class="bitem">
+        <div class="txt"><h4>합격 시 수강료 전액 환급</h4><p>합격하면 낸 돈을 그대로 돌려받습니다</p></div>
+        <div class="bicon" style="background:#e8452c">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6.5" width="19" height="12" rx="2.5"/><circle cx="12" cy="12.5" r="3"/></svg>
+        </div>
+      </div>
+      <div class="bitem">
+        <div class="txt"><h4>단기 합격 노하우 제공</h4><p>한 달 안에 끝내는 학습 로드맵</p></div>
+        <div class="bicon" style="background:#2f6feb">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.5.4.8 1 .8 1.6h5.4c0-.6.3-1.2.8-1.6A6 6 0 0 0 12 3z"/></svg>
+        </div>
+      </div>
+      <div class="bitem">
+        <div class="txt"><h4>협회 주관 일자리 취업연계</h4><p>취득 후 일감 배정까지 연결</p></div>
+        <div class="bicon" style="background:#12805c">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg>
+        </div>
+      </div>
     </div>
     <p class="caution">※ 수량 소진 시 별도 안내 없이 종료될 수 있습니다 ※</p>
   </section>
@@ -432,15 +471,10 @@ footer{background:#e9edf2;padding:22px;text-align:center;font-size:12px;color:#7
   <section class="apply" id="apply">
     <span class="sec-label">신청하기</span>
     <h2>1분이면 접수 완료</h2>
-    <p class="sub">이름과 연락처만 남기시면 담당자가 안내드립니다.</p>
+    <p class="sub">이름과 연락처만 남기시면 담당자가 안내드립니다.<br>아래 버튼을 누르면 이 자리에서 바로 신청폼이 열립니다.</p>
 
-    <div class="form-slot">
-      <!-- 텐핑·디비센스 등 제휴 플랫폼의 입력폼 퍼가기 코드를 이 자리에 그대로 붙여넣으세요.
-           예) <iframe src="https://dbsense.kr/js/form/iframe.php?..." height="480" scrolling="no"></iframe> -->
-      <p>제휴 플랫폼 입력폼 삽입 영역<code>&lt;iframe src="입력폼_퍼가기_주소" height="480" scrolling="no"&gt;&lt;/iframe&gt;</code></p>
-    </div>
-
-    <a class="cta" href="#apply">취득지원 신청하기 &gt;<small>선착순 마감 · 상담료 무료</small></a>
+    <!-- 실제 입력폼은 중복 삽입을 피하기 위해 하단 고정바(.dock-form) 한 곳에만 둔다. 이 버튼은 그 폼을 펼치는 역할만 함 -->
+    <button class="cta" type="button" id="openFormBtn">취득지원 신청하기 &gt;<small>선착순 마감 · 상담료 무료</small></button>
   </section>
 
   <section class="privacy">
@@ -464,10 +498,18 @@ footer{background:#e9edf2;padding:22px;text-align:center;font-size:12px;color:#7
   </footer>
 </div>
 
-<div class="dock">
+<div class="dock" id="dock">
   <div class="dock-in">
     <div class="dock-txt"><b>손해평가사 취득지원</b><span>잔여 <b id="left3">3</b>명 · 오늘 마감</span></div>
-    <a href="#apply">신청하기</a>
+    <button type="button" id="dockToggle">신청하기</button>
+  </div>
+  <div class="dock-form" id="dockForm">
+    <div class="form-slot">
+      <!-- 텐핑·디비센스 등 제휴 플랫폼의 입력폼 퍼가기 코드를 이 자리에 그대로 붙여넣으세요.
+           예) <iframe src="https://dbsense.kr/js/form/iframe.php?..." height="480" scrolling="no"></iframe>
+           입력폼은 페이지 전체에서 이 한 곳에만 둔다(중복 삽입 금지) -->
+      <p>제휴 플랫폼 입력폼 삽입 영역<code>&lt;iframe src="입력폼_퍼가기_주소" height="480" scrolling="no"&gt;&lt;/iframe&gt;</code></p>
+    </div>
   </div>
 </div>
 
@@ -504,6 +546,19 @@ footer{background:#e9edf2;padding:22px;text-align:center;font-size:12px;color:#7
     if(c) c.textContent=pad(s%60);
   }
   tick(); setInterval(tick,1000);
+
+  // 하단 고정바 — "신청하기" 클릭 시 그 자리에서 위로 펼쳐지며 입력폼을 보여줌(바텀시트)
+  var dock=document.getElementById("dock"), dockToggle=document.getElementById("dockToggle"),
+      openFormBtn=document.getElementById("openFormBtn");
+  function setDockOpen(open){
+    if(!dock) return;
+    dock.classList.toggle("is-open", open);
+    if(dockToggle) dockToggle.textContent = open ? "닫기" : "신청하기";
+  }
+  if(dockToggle) dockToggle.addEventListener("click", function(){
+    setDockOpen(!dock.classList.contains("is-open"));
+  });
+  if(openFormBtn) openFormBtn.addEventListener("click", function(){ setDockOpen(true); });
 })();
 </script>
 </body>
