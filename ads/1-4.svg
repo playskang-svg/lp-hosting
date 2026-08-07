@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920" role="img" aria-label="농어업재해 손해평가사 국가자격 안내 광고 이미지(스토리·릴스 9:16)">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#245f96"/>
+      <stop offset="45%" stop-color="#5c9ccb"/>
+      <stop offset="100%" stop-color="#c9e6f5"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff3b8" stop-opacity=".9"/>
+      <stop offset="100%" stop-color="#fff3b8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a9c95c"/>
+      <stop offset="100%" stop-color="#a37a2c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1080" height="1920" fill="url(#sky)"/>
+  <circle cx="812" cy="330" r="220" fill="url(#sunGlow)"/>
+  <circle cx="812" cy="330" r="74" fill="#ffe071"/>
+  <circle cx="812" cy="330" r="50" fill="#fff6c8"/>
+
+  <g fill="#ffffff" opacity=".85">
+    <ellipse cx="592" cy="272" rx="72" ry="31"/>
+    <ellipse cx="542" cy="288" rx="46" ry="22"/>
+    <ellipse cx="648" cy="290" rx="43" ry="20"/>
+  </g>
+
+  <!-- 먹구름과 우박(자연재해) -->
+  <g>
+    <ellipse cx="256" cy="316" rx="96" ry="42" fill="#5f7994"/>
+    <ellipse cx="190" cy="338" rx="64" ry="32" fill="#4e6884"/>
+    <ellipse cx="324" cy="338" rx="56" ry="28" fill="#4e6884"/>
+    <g stroke="#dbeaf6" stroke-width="4" stroke-linecap="round" opacity=".85">
+      <path d="M188 382l-10 30"/><path d="M240 396l-10 30"/><path d="M292 382l-10 30"/>
+      <path d="M214 434l-8 22"/><path d="M266 440l-8 22"/>
+    </g>
+    <g fill="#ffffff" opacity=".9">
+      <circle cx="202" cy="480" r="5"/><circle cx="256" cy="494" r="4.5"/><circle cx="308" cy="476" r="5"/>
+    </g>
+  </g>
+
+  <!-- 카피 (스토리 UI에 가리지 않는 중앙 안전 영역) -->
+  <path d="M0 596h1080v450H0z" fill="#16202e" opacity=".95"/>
+  <path d="M0 596h1080v11H0z" fill="#e8452c"/>
+  <g font-family="-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif" text-anchor="middle">
+    <text x="540" y="690" font-size="38" font-weight="700" fill="#ffd45e" letter-spacing="4">농어업재해</text>
+    <text x="540" y="820" font-size="124" font-weight="800" fill="#ffffff" letter-spacing="-5">손해평가사</text>
+    <rect x="386" y="864" width="308" height="72" rx="36" fill="#e8452c"/>
+    <text x="540" y="913" font-size="35" font-weight="800" fill="#ffffff">경력 · 학력 무관</text>
+    <text x="540" y="1002" font-size="31" font-weight="600" fill="#e8eff6">국가자격 취득 과정 무료 상담</text>
+  </g>
+
+  <path d="M0 1178c150-42 258 8 372-16s218-48 348-16 210 12 360-10v66H0z" fill="#5a9a63"/>
+  <path d="M0 1216c176-26 282 14 420-8s232-30 372-8 190 10 288 2v44H0z" fill="#427f4e"/>
+
+  <rect x="0" y="1246" width="1080" height="674" fill="url(#field)"/>
+  <g stroke="#8a6524" stroke-width="3.5" opacity=".26">
+    <path d="M-200 1920L300 1248"/><path d="M120 1920L470 1248"/><path d="M460 1920L640 1248"/>
+    <path d="M820 1920L810 1248"/><path d="M1220 1920L980 1248"/>
+  </g>
+  <g fill="#8ea83f" opacity=".45">
+    <path d="M0 1262h1080v18H0z"/><path d="M0 1320h1080v20H0z"/>
+  </g>
+  <g stroke="#7d5a1e" stroke-width="7" stroke-linecap="round" opacity=".45">
+    <path d="M110 1560l46-54M228 1572l40-58M352 1556l48-52"/>
+  </g>
+
+  <!-- 조사원 -->
+  <g transform="translate(690,1556) scale(2.15) translate(-628,-475)">
+    <ellipse cx="648" cy="474" rx="60" ry="12" fill="#7d5a1e" opacity=".35"/>
+    <rect x="628" y="398" width="17" height="72" rx="6" fill="#1d2b3f"/>
+    <rect x="653" y="398" width="17" height="72" rx="6" fill="#26374d"/>
+    <rect x="622" y="462" width="27" height="13" rx="5" fill="#16202e"/>
+    <rect x="649" y="462" width="27" height="13" rx="5" fill="#16202e"/>
+    <path d="M619 336a30 30 0 0 1 60 0v62a10 10 0 0 1-10 10h-40a10 10 0 0 1-10-10z" fill="#e8452c"/>
+    <rect x="641" y="330" width="16" height="78" fill="#f7fafc"/>
+    <g fill="#ffffff" opacity=".8">
+      <rect x="619" y="356" width="60" height="7"/>
+      <rect x="619" y="376" width="60" height="7"/>
+    </g>
+    <path d="M622 344c-14 6-24 16-30 28l16 10c5-9 12-16 20-20z" fill="#f7fafc"/>
+    <circle cx="649" cy="300" r="21" fill="#f5cfa6"/>
+    <path d="M628 296a21 21 0 0 1 42 0z" fill="#16202e"/>
+    <path d="M628 296h-16a5 5 0 0 0 0 10h16z" fill="#16202e"/>
+    <rect x="576" y="352" width="52" height="38" rx="5" fill="#16202e"/>
+    <rect x="581" y="357" width="42" height="28" rx="3" fill="#bfe3f4"/>
+    <g stroke="#16202e" stroke-width="2.5" stroke-linecap="round" opacity=".6">
+      <path d="M587 378l7-8 6 5 9-11"/>
+    </g>
+  </g>
+</svg>
