@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>손해평가사 취득지원 | 선착순 30명 한정</title>
+<meta name="description" content="경력·학력 무관, 한 달이면 충분한 국가공인 손해평가사. 선착순 30명 합격전략집 무료 제공 및 수강료 전액 환급 지원.">
+<meta property="og:title" content="손해평가사 취득지원 | 선착순 30명 한정">
+<meta property="og:description" content="경력·학력 무관 국가공인 자격증. 합격전략집 무료 + 합격 시 수강료 전액 환급.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{
+  --navy:#0f2544; --navy-soft:#1b3a63; --ink:#16202e; --body:#4a5567;
+  --line:#e3e8ef; --bg:#f4f6f9; --card:#ffffff;
+  --point:#e8452c; --point-dark:#c3341e; --point-soft:#fdeeeb;
+  --gold:#b8863b; --gold-soft:#fdf6e9; --ok:#12805c; --ok-soft:#e7f5ef;
+  --r:14px; --shadow:0 2px 14px rgba(16,32,54,.07);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg); color:var(--ink); line-height:1.62;
+  word-break:keep-all; -webkit-font-smoothing:antialiased;
+  padding-bottom:84px;
+}
+.wrap{max-width:520px;margin:0 auto;background:var(--card);box-shadow:0 0 40px rgba(16,32,54,.06)}
+section{padding:44px 22px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* 상단 고지 바 */
+.topbar{
+  background:var(--navy); color:#fff; text-align:center;
+  padding:11px 16px; font-size:14px; font-weight:600; letter-spacing:-.3px;
+}
+.topbar b{color:#ffd45e}
+
+/* 히어로 */
+.hero{padding:0 22px 34px;background:linear-gradient(180deg,#f8fafc 0%,#ffffff 100%);text-align:center;overflow:hidden}
+.eyebrow{
+  display:inline-block;background:var(--point-soft);color:var(--point-dark);
+  font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px;margin-bottom:14px;
+}
+.hero-img + .eyebrow{margin-top:4px}
+.hero h1{font-size:29px;line-height:1.34;font-weight:800;letter-spacing:-1px;color:var(--navy)}
+.hero h1 em{
+  font-style:normal;color:var(--point);
+  background:linear-gradient(transparent 68%,rgba(232,69,44,.16) 68%);
+  padding:0 2px;
+}
+.hero p{margin-top:14px;font-size:16px;color:var(--body)}
+.hero-img{
+  margin:0 -22px 20px;overflow:hidden;background:#e9edf3;
+  aspect-ratio:8/5;display:flex;align-items:center;justify-content:center;
+  color:#93a0b3;font-size:13px;font-weight:600;
+}
+.hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* 공통 제목 */
+.sec-label{
+  display:block;text-align:center;font-size:13px;font-weight:700;letter-spacing:1px;
+  color:var(--point);margin-bottom:8px;
+}
+h2{font-size:24px;line-height:1.4;font-weight:800;letter-spacing:-.8px;text-align:center;color:var(--navy)}
+h2 + .sub{text-align:center;margin-top:10px;font-size:15px;color:var(--body)}
+
+/* 실시간 접수 현황 */
+.status{background:var(--navy);color:#fff}
+.status h2{color:#fff}
+.status .sub{color:#b9c6d8}
+.gauge{margin:26px 0 6px}
+.gauge-top{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;color:#b9c6d8;margin-bottom:9px}
+.gauge-top b{font-size:20px;color:#ffd45e;font-weight:800}
+.bar{height:11px;border-radius:999px;background:rgba(255,255,255,.16);overflow:hidden}
+.bar span{display:block;height:100%;width:90%;border-radius:999px;background:linear-gradient(90deg,#ffb03a,#e8452c)}
+.gauge-note{margin-top:10px;font-size:13px;color:#ffd45e;text-align:right;font-weight:600}
+
+.feed{margin-top:24px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);overflow:hidden}
+.feed-head{display:grid;grid-template-columns:78px 66px minmax(0,1fr);gap:8px;padding:11px 14px;font-size:12px;color:#93a5bd;border-bottom:1px solid rgba(255,255,255,.1);font-weight:600}
+.feed-view{height:198px;overflow:hidden;position:relative;mask-image:linear-gradient(180deg,transparent,#000 14%,#000 86%,transparent)}
+.feed-track{animation:roll 26s linear infinite}
+.feed-view:hover .feed-track{animation-play-state:paused}
+@keyframes roll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+.feed-row{display:grid;grid-template-columns:78px 66px minmax(0,1fr);gap:8px;align-items:center;padding:10px 14px;font-size:13px;border-bottom:1px solid rgba(255,255,255,.06)}
+.tag{font-size:11px;font-weight:700;padding:3px 0;border-radius:6px;text-align:center}
+.tag.req{background:rgba(255,212,94,.16);color:#ffd45e}
+.tag.done{background:rgba(60,215,160,.16);color:#5fe0b0}
+.feed-row .nm{color:#e6ecf4;font-weight:600}
+.feed-row .msg{color:#a9b8cc;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.feed-note{margin-top:9px;text-align:right;font-size:11.5px;color:#7c8ba3}
+
+/* 왜 지금인가 - 혜택 카드 */
+.why{background:var(--bg)}
+.cards{margin-top:26px;display:grid;gap:12px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:20px;box-shadow:var(--shadow);
+}
+.card .kicker{font-size:12px;font-weight:700;color:var(--point);letter-spacing:.4px}
+.card h3{margin-top:6px;font-size:19px;font-weight:800;letter-spacing:-.5px;color:var(--navy)}
+.card p{margin-top:7px;font-size:15px;color:var(--body)}
+.card p b{color:var(--ink);font-weight:700}
+.proof{
+  margin-top:12px;display:inline-flex;align-items:center;gap:6px;
+  background:var(--ok-soft);color:var(--ok);font-size:13px;font-weight:700;
+  padding:6px 11px;border-radius:8px;
+}
+.proof::before{content:"✓";font-weight:900}
+.card-img{margin-top:14px;border-radius:10px;overflow:hidden;background:#eef1f5;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:#93a0b3;font-size:12px;font-weight:600}
+.card-img img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* 응시자격 */
+.qual{background:var(--card)}
+.stars{margin-top:22px;text-align:center;font-size:14px;color:var(--body);font-weight:600}
+.stars .s{display:block;font-size:26px;letter-spacing:5px;color:var(--gold);margin-bottom:6px}
+.qual-list{margin-top:24px;display:grid;gap:10px}
+.qual-item{
+  display:flex;align-items:center;gap:12px;background:var(--gold-soft);
+  border:1px solid #f0e2c6;border-radius:12px;padding:15px 17px;
+}
+.qual-item .ic{
+  flex:none;width:32px;height:32px;border-radius:50%;background:var(--gold);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;
+}
+.qual-item p{font-size:15.5px;font-weight:700;color:#6b4c17;letter-spacing:-.4px}
+
+/* 공신력 */
+.trust{background:#eef2f7;padding:32px 22px}
+.trust-box{background:var(--card);border:1px solid #d9e1ea;border-radius:var(--r);padding:22px 20px}
+.trust-box h3{
+  font-size:13px;font-weight:700;letter-spacing:.5px;color:#7b8798;
+  text-align:center;padding-bottom:14px;border-bottom:1px solid var(--line);
+}
+.trust-list{margin-top:16px;display:grid;gap:12px}
+.trust-row{display:grid;grid-template-columns:82px minmax(0,1fr);gap:10px;align-items:baseline}
+.trust-row dt{font-size:13.5px;color:#7b8798;font-weight:600}
+.trust-row dd{font-size:15.5px;color:var(--navy);font-weight:800;letter-spacing:-.4px}
+.trust-note{
+  margin-top:16px;padding-top:14px;border-top:1px dashed #d9e1ea;
+  font-size:12.5px;color:#8b95a3;line-height:1.7;
+}
+
+/* 지원 혜택 */
+.benefit{background:var(--navy-soft);color:#fff}
+.benefit h2{color:#fff}
+.benefit .sub{color:#c3d1e3}
+.blist{margin-top:26px;display:grid;gap:11px;counter-reset:b}
+.bitem{
+  display:flex;gap:14px;align-items:flex-start;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
+  border-radius:12px;padding:17px 18px;
+}
+.bitem::before{
+  counter-increment:b;content:counter(b);
+  flex:none;width:28px;height:28px;border-radius:8px;background:#ffd45e;color:#4a3406;
+  display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;
+}
+.bitem h4{font-size:17px;font-weight:700;letter-spacing:-.4px}
+.bitem p{margin-top:4px;font-size:14px;color:#c3d1e3}
+.caution{margin-top:18px;text-align:center;font-size:13px;color:#ffd45e;font-weight:600}
+
+/* 마감 */
+.closing{background:var(--point-soft);text-align:center}
+.closing h2{color:var(--point-dark)}
+.remain{
+  margin-top:16px;display:inline-block;background:#fff;border:1px solid #f6cdc4;
+  border-radius:999px;padding:8px 18px;font-size:14.5px;font-weight:700;color:var(--point-dark);
+}
+.clock{margin-top:22px;display:flex;justify-content:center;gap:9px}
+.unit{background:var(--navy);border-radius:12px;padding:14px 0;width:82px}
+.unit b{display:block;font-size:31px;font-weight:800;color:#fff;font-variant-numeric:tabular-nums;line-height:1.1}
+.unit span{display:block;margin-top:3px;font-size:12px;color:#9fb2ca;font-weight:600}
+
+/* 신청 폼 */
+.apply{background:var(--card);scroll-margin-top:12px}
+.form-slot{
+  margin-top:22px;border:2px dashed #cfd8e4;border-radius:var(--r);
+  background:#f8fafc;padding:26px 18px;text-align:center;
+}
+.form-slot p{font-size:14px;color:#7b8798;line-height:1.7}
+.form-slot code{
+  display:block;margin-top:10px;font-size:12px;color:var(--navy);
+  background:#eef2f7;border-radius:8px;padding:9px;word-break:break-all;
+}
+.form-slot iframe{width:100%;border:0;display:block}
+
+.cta{
+  display:block;margin-top:20px;background:var(--point);color:#fff;text-align:center;
+  border-radius:12px;padding:19px;font-size:19px;font-weight:800;letter-spacing:-.5px;
+  text-decoration:none;box-shadow:0 6px 18px rgba(232,69,44,.28);
+  transition:transform .12s ease,background .12s ease;
+}
+.cta:active{transform:scale(.985);background:var(--point-dark)}
+.cta small{display:block;margin-top:4px;font-size:13px;font-weight:600;opacity:.9}
+
+/* 개인정보 / 푸터 */
+.privacy{background:var(--bg);padding:28px 22px}
+.privacy details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 17px}
+.privacy summary{font-size:14px;font-weight:700;color:var(--navy);cursor:pointer;list-style:none}
+.privacy summary::after{content:"＋";float:right;color:#9aa6b6}
+.privacy details[open] summary::after{content:"－"}
+.privacy .body{margin-top:12px;font-size:13px;color:var(--body);line-height:1.75}
+.privacy .body dt{font-weight:700;color:var(--ink);margin-top:9px}
+footer{background:#e9edf2;padding:22px;text-align:center;font-size:12px;color:#7b8798;line-height:1.8}
+
+/* 하단 고정 CTA */
+.dock{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:rgba(255,255,255,.97);border-top:1px solid var(--line);
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  backdrop-filter:saturate(160%) blur(8px);
+}
+.dock-in{max-width:520px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.dock-txt{flex:1;min-width:0}
+.dock-txt > b{display:block;font-size:14px;font-weight:800;color:var(--navy);letter-spacing:-.4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dock-txt > span{display:block;font-size:12.5px;color:var(--point);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dock-txt > span b{display:inline;font-weight:800}
+.dock a{
+  flex:none;background:var(--point);color:#fff;text-decoration:none;
+  border-radius:10px;padding:14px 22px;font-size:16px;font-weight:800;letter-spacing:-.4px;
+}
+.dock a:active{background:var(--point-dark)}
+
+@media (max-width:400px){
+  section{padding:38px 17px}
+  .hero{padding:0 17px 30px}
+  .hero-img{margin:0 -17px 18px}
+  .hero h1{font-size:25px} h2{font-size:20.5px}
+  .unit{width:70px} .unit b{font-size:26px}
+  .dock a{padding:13px 16px;font-size:15px}
+  .dock-in{gap:9px}
+  .feed-head,.feed-row{grid-template-columns:70px 56px minmax(0,1fr);gap:6px;padding-left:11px;padding-right:11px}
+  .feed-row{font-size:12.5px}
+  .tag{font-size:10.5px}
+  .qual-item p{font-size:14.5px}
+  .cta{font-size:17.5px;padding:17px}
+  .trust{padding:28px 17px}
+  .trust-row{grid-template-columns:74px minmax(0,1fr);gap:8px}
+  .trust-row dd{font-size:14.5px}
+}
+@media (max-width:340px){
+  .hero h1{font-size:23px}
+  .unit{width:62px} .unit b{font-size:23px}
+  .dock-txt > b{font-size:13px}
+  .dock a{padding:12px 14px;font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  .feed-track{animation:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">선착순 <b>30명</b> 한정 · 손해평가사 취득지원 프로그램</div>
+
+  <header class="hero">
+    <div class="hero-img">
+      <img src="img/hero.jpg" alt="손해평가사(농어업재해 손해평가사) 안내 이미지" width="800" height="500" fetchpriority="high" decoding="async">
+    </div>
+    <span class="eyebrow">2026년 취득지원 접수중</span>
+    <h1>경력도 학력도 없이<br><em>한 달</em>이면 따는<br>국가공인 자격증</h1>
+    <p>농어업재해 보험 규모가 매년 커지는 지금,<br>피해 조사 인력이 가장 부족한 시점입니다.</p>
+  </header>
+
+  <section class="status">
+    <h2 class="sr">실시간 접수 현황</h2>
+    <span class="sec-label" style="color:#ffd45e">LIVE</span>
+    <h2 aria-hidden="true">실시간 접수 현황</h2>
+    <p class="sub">지원 인원이 소진되면 접수가 조기 마감됩니다.</p>
+
+    <div class="gauge">
+      <div class="gauge-top"><span>취득지원 신청</span><span><b id="cnt">27</b> / 30명</span></div>
+      <div class="bar"><span id="barfill" style="width:90%"></span></div>
+      <p class="gauge-note">잔여 <b id="left">3</b>명</p>
+    </div>
+
+    <div class="feed">
+      <div class="feed-head"><span>진행상황</span><span>신청자</span><span>문의사항</span></div>
+      <div class="feed-view"><div class="feed-track" id="feed"></div></div>
+    </div>
+    <!-- ROWS는 실제 접수 데이터가 아닌 예시임을 아래 문구로 고지 (HANDOFF.md 5장 4번, 마케터 윤리 원칙) -->
+    <p class="feed-note">* 최근 문의 예시입니다</p>
+  </section>
+
+  <section class="why">
+    <span class="sec-label">WHY NOW</span>
+    <h2>왜, 지금 따야 할까요?</h2>
+    <p class="sub">자격증 하나로 바뀌는 것들</p>
+
+    <div class="cards">
+      <article class="card">
+        <span class="kicker">블루오션</span>
+        <h3>사람이 없어서 못 뽑습니다</h3>
+        <p>기후 변화로 자연재해가 늘면서 <b>농작물 피해 조사 인력이 절대적으로 부족</b>한 상황입니다.</p>
+        <!-- '최근 3년간 채용 300% 증가' 문구는 근거 자료를 찾지 못해 삭제함(2026-08-07). 광고주가 통계 자료를 제공하면 여기에 근거와 함께 복원할 것. -->
+        <div class="card-img"><!-- 실제 구인 공고 스크린샷(광고주 제공)으로 교체. 가공된 그래프 이미지 금지 -->채용 공고 스크린샷 이미지</div>
+      </article>
+
+      <article class="card">
+        <span class="kicker">성과급 구조</span>
+        <h3>번 만큼 그대로 내 수익</h3>
+        <!-- '평균 연봉 6,000만원' / '월 400만~1,000만원' 문구는 근거 자료를 찾지 못해 삭제함(2026-08-07).
+             조사 결과: 협회 정식직원 기준 연 3,000~4,000만원, 프리랜서는 건당 단가·조사 건수에 따라 편차가 큼(자세한 근거는 HANDOFF.md 참고).
+             광고주가 구체적 수치의 근거를 제공하면 그 수치로 복원할 것. -->
+        <p>조사 건수에 따라 수입이 달라지는 구조라, <b>일한 만큼 그대로 수입</b>이 됩니다.</p>
+      </article>
+
+      <article class="card">
+        <span class="kicker">국가공인 자격증</span>
+        <h3>한 번 따면 평생 갑니다</h3>
+        <p>국가가 인정하는 자격이라 <b>정년 없이 평생직장</b>으로 활용할 수 있습니다. 지금이 선점 시점입니다.</p>
+      </article>
+
+      <article class="card">
+        <span class="kicker">취업 1순위</span>
+        <h3>자격증이 곧 일자리</h3>
+        <p>협회를 통해 <b>일이 자동으로 배정</b>되는 구조라, 따로 영업할 필요가 없습니다.</p>
+        <!-- '의무채용 시행 중 · 취업률 95%' 문구는 근거 자료를 찾지 못해 삭제함(2026-08-07). 광고주가 근거를 제공하면 복원할 것. -->
+        <div class="card-img"><!-- 실제 채용 공고 캡처(광고주 제공)로 교체 -->채용 공고 캡처 이미지</div>
+      </article>
+
+      <article class="card">
+        <span class="kicker">프리랜서 근무 가능</span>
+        <h3>건당 30~60만원</h3>
+        <p>출퇴근 없이 <b>일정을 직접 조율</b>하며 원하는 만큼만 일할 수 있습니다.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="qual">
+    <span class="sec-label">응시자격</span>
+    <h2>누가 딸 수 있나요?</h2>
+    <div class="stars"><span class="s" aria-label="취득 난이도 5점 만점에 1점">★☆☆☆☆</span>취득 난이도</div>
+
+    <div class="qual-list">
+      <div class="qual-item"><span class="ic">1</span><p>경력 · 학력 관계없이 누구나</p></div>
+      <div class="qual-item"><span class="ic">2</span><p>나이 제한 없음 (60대 취득자 다수)</p></div>
+      <div class="qual-item"><span class="ic">3</span><p>준비 기간 한 달이면 충분</p></div>
+    </div>
+  </section>
+
+  <section class="trust">
+    <div class="trust-box">
+      <h3>국가전문자격 · 운영 체계</h3>
+      <dl class="trust-list">
+        <div class="trust-row"><dt>소관부처</dt><dd>농림축산식품부</dd></div>
+        <div class="trust-row"><dt>운용기관</dt><dd>농업정책보험금융원</dd></div>
+        <div class="trust-row"><dt>시험시행</dt><dd>한국산업인력공단 (Q-Net)</dd></div>
+      </dl>
+      <p class="trust-note">
+        위 기관 정보는 손해평가사 자격제도의 공식 운영 체계이며, 본 페이지는 해당 기관과 무관한
+        민간 교육기관의 수강 상담 안내 페이지입니다.
+      </p>
+    </div>
+  </section>
+
+  <section class="benefit">
+    <span class="sec-label" style="color:#ffd45e">선착순 30명 한정</span>
+    <h2>취득지원 4대 혜택</h2>
+    <p class="sub">이번 회차 신청자에게만 제공됩니다.</p>
+
+    <div class="blist">
+      <div class="bitem"><div><h4>최신 합격전략집 제공</h4><p>올해 출제 경향을 반영한 핵심 요약본</p></div></div>
+      <div class="bitem"><div><h4>합격 시 수강료 전액 환급</h4><p>합격하면 낸 돈을 그대로 돌려받습니다</p></div></div>
+      <div class="bitem"><div><h4>단기 합격 노하우 제공</h4><p>한 달 안에 끝내는 학습 로드맵</p></div></div>
+      <div class="bitem"><div><h4>협회 주관 일자리 취업연계</h4><p>취득 후 일감 배정까지 연결</p></div></div>
+    </div>
+    <p class="caution">※ 수량 소진 시 별도 안내 없이 종료될 수 있습니다 ※</p>
+  </section>
+
+  <section class="closing">
+    <span class="sec-label">마감임박</span>
+    <h2>오늘 접수가 마감됩니다</h2>
+    <div class="remain">선착순 30명 중 <b id="left2">3</b>명 남았습니다</div>
+    <div class="clock">
+      <div class="unit"><b id="hh">00</b><span>시간</span></div>
+      <div class="unit"><b id="mm">00</b><span>분</span></div>
+      <div class="unit"><b id="ss">00</b><span>초</span></div>
+    </div>
+  </section>
+
+  <section class="apply" id="apply">
+    <span class="sec-label">신청하기</span>
+    <h2>1분이면 접수 완료</h2>
+    <p class="sub">이름과 연락처만 남기시면 담당자가 안내드립니다.</p>
+
+    <div class="form-slot">
+      <!-- 텐핑·디비센스 등 제휴 플랫폼의 입력폼 퍼가기 코드를 이 자리에 그대로 붙여넣으세요.
+           예) <iframe src="https://dbsense.kr/js/form/iframe.php?..." height="480" scrolling="no"></iframe> -->
+      <p>제휴 플랫폼 입력폼 삽입 영역<code>&lt;iframe src="입력폼_퍼가기_주소" height="480" scrolling="no"&gt;&lt;/iframe&gt;</code></p>
+    </div>
+
+    <a class="cta" href="#apply">취득지원 신청하기 &gt;<small>선착순 마감 · 상담료 무료</small></a>
+  </section>
+
+  <section class="privacy">
+    <details>
+      <summary>개인정보 수집 및 이용 동의 (필수)</summary>
+      <div class="body">
+        <dl>
+          <dt>수집 항목</dt><dd>이름, 연락처</dd>
+          <dt>수집 목적</dt><dd>자격증 취득 과정 상담 및 안내</dd>
+          <dt>보유 기간</dt><dd>상담 완료 후 즉시 파기 (관계 법령에 따른 보관 의무가 있는 경우 해당 기간 준수)</dd>
+          <dt>제3자 제공</dt><dd>상담 진행을 위해 제휴 교육기관에 제공됩니다.</dd>
+        </dl>
+        동의를 거부할 권리가 있으며, 거부 시 상담 서비스 이용이 제한됩니다.
+      </div>
+    </details>
+  </section>
+
+  <footer>
+    본 페이지는 광고 목적으로 제작된 페이지입니다.<br>
+    상호 · 사업자등록번호 · 문의처 표기 영역
+  </footer>
+</div>
+
+<div class="dock">
+  <div class="dock-in">
+    <div class="dock-txt"><b>손해평가사 취득지원</b><span>잔여 <b id="left3">3</b>명 · 오늘 마감</span></div>
+    <a href="#apply">신청하기</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  var ROWS=[
+    ["신청","김*수","부산 가능한가요"],["완료","조*민","신청했어요!"],
+    ["신청","이*수","이직해서 다른거"],["신청","김*형","따는데 얼마나"],
+    ["완료","윤*원","꼭 하고싶어요"],["완료","이*선","61세인데 가능할"],
+    ["완료","한*희","프리랜서 궁금해요"],["완료","김*중","친구가 추천해줘서"],
+    ["완료","연*남","문자 먼저 주세요"],["신청","박*진","주말에도 되나요"]
+  ];
+  var html=ROWS.map(function(r){
+    var cls=r[0]==="완료"?"done":"req", label=r[0]==="완료"?"상담완료":"상담신청";
+    return '<div class="feed-row"><span class="tag '+cls+'">'+label+'</span>'+
+           '<span class="nm">'+r[1]+'</span><span class="msg">'+r[2]+'</span></div>';
+  }).join("");
+  var feed=document.getElementById("feed");
+  if(feed) feed.innerHTML=html+html;
+
+  var TOTAL=30, DONE=27, left=TOTAL-DONE;
+  ["cnt"].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=DONE;});
+  ["left","left2","left3"].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=left;});
+  var bf=document.getElementById("barfill");
+  if(bf) bf.style.width=Math.round(DONE/TOTAL*100)+"%";
+
+  function pad(n){return n<10?"0"+n:""+n;}
+  function tick(){
+    var now=new Date(), end=new Date(now); end.setHours(24,0,0,0);
+    var s=Math.max(0,Math.floor((end-now)/1000));
+    var h=document.getElementById("hh"), m=document.getElementById("mm"), c=document.getElementById("ss");
+    if(h) h.textContent=pad(Math.floor(s/3600));
+    if(m) m.textContent=pad(Math.floor(s%3600/60));
+    if(c) c.textContent=pad(s%60);
+  }
+  tick(); setInterval(tick,1000);
+})();
+</script>
+</body>
+</html>
