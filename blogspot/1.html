@@ -1,0 +1,427 @@
+<!-- ================= 손해평가사 취득지원 LP · 블로그스팟 본문 삽입용 ================= -->
+<style>
+.lpk{
+  --lpk-navy:#0f2544; --lpk-navy-soft:#1b3a63; --lpk-ink:#16202e; --lpk-body:#4a5567;
+  --lpk-line:#e3e8ef; --lpk-bg:#f4f6f9; --lpk-card:#ffffff;
+  --lpk-point:#e8452c; --lpk-point-dark:#c3341e; --lpk-point-soft:#fdeeeb;
+  --lpk-gold:#b8863b; --lpk-gold-soft:#fdf6e9; --lpk-ok:#12805c; --lpk-ok-soft:#e7f5ef;
+  --lpk-r:14px; --lpk-shadow:0 2px 14px rgba(16,32,54,.07);
+  max-width:520px; margin:0 auto; background:var(--lpk-card);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:16px; line-height:1.62; color:var(--lpk-ink);
+  text-align:left; word-break:keep-all; -webkit-font-smoothing:antialiased;
+  font-style:normal; letter-spacing:normal; word-spacing:normal;
+  text-indent:0; text-transform:none; text-shadow:none;
+  box-shadow:0 0 40px rgba(16,32,54,.06);
+}
+/* 블로그 테마 CSS가 안으로 새어 들어오지 못하게 초기화.
+   SVG는 제외한다 — font 계열을 덮으면 일러스트 안 글자 크기가 깨진다 */
+.lpk *,.lpk *::before,.lpk *::after{
+  margin:0; padding:0; box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+.lpk h1,.lpk h2,.lpk h3,.lpk h4,.lpk h5,.lpk h6,
+.lpk p,.lpk div,.lpk span,.lpk b,.lpk strong,.lpk em,.lpk i,.lpk a,
+.lpk dl,.lpk dt,.lpk dd,.lpk ul,.lpk ol,.lpk li,
+.lpk details,.lpk summary,.lpk button,.lpk img{
+  border:0; outline:0; background:transparent; color:inherit;
+  font-family:inherit; font-size:inherit; font-weight:inherit; font-style:normal;
+  line-height:inherit; letter-spacing:normal; word-spacing:normal;
+  text-align:inherit; text-indent:0; text-decoration:none; text-transform:none; text-shadow:none;
+  list-style:none; float:none; position:static;
+  max-width:none; min-width:0; min-height:0; white-space:normal; vertical-align:baseline;
+}
+.lpk b,.lpk strong{font-weight:700}
+.lpk img{display:block;max-width:100%;height:auto}
+.lpk svg{display:block;max-width:100%;border:0;background:transparent}
+.lpk button{cursor:pointer;-webkit-appearance:none;appearance:none}
+.lpk summary::-webkit-details-marker{display:none}
+.lpk .lpk-sec{padding:44px 22px}
+
+.lpk .lpk-topbar{background:var(--lpk-navy);color:#fff;text-align:center;padding:11px 16px;font-size:14px;font-weight:600;letter-spacing:-.3px}
+.lpk .lpk-topbar b{color:#ffd45e}
+
+.lpk .lpk-hero{padding:0 22px 34px;background:linear-gradient(180deg,#f8fafc 0%,#ffffff 100%);text-align:center;overflow:hidden}
+.lpk .lpk-eyebrow{display:inline-block;background:var(--lpk-point-soft);color:var(--lpk-point-dark);font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px;margin:4px 0 14px}
+.lpk .lpk-hero h1{font-size:29px;line-height:1.34;font-weight:800;letter-spacing:-1px;color:var(--lpk-navy)}
+.lpk .lpk-hero h1 em{font-style:normal;color:var(--lpk-point);background:linear-gradient(transparent 68%,rgba(232,69,44,.16) 68%);padding:0 2px}
+.lpk .lpk-hero p{margin-top:14px;font-size:16px;color:var(--lpk-body)}
+.lpk .lpk-heroimg{margin:0 -22px 20px;overflow:hidden;background:#e9edf3;aspect-ratio:8/5}
+.lpk .lpk-heroimg img{width:100%;height:100%;object-fit:cover}
+
+.lpk .lpk-label{display:block;text-align:center;font-size:13px;font-weight:700;letter-spacing:1px;color:var(--lpk-point);margin-bottom:8px}
+.lpk .lpk-sec h2{font-size:24px;line-height:1.4;font-weight:800;letter-spacing:-.8px;text-align:center;color:var(--lpk-navy)}
+.lpk .lpk-sub{text-align:center;margin-top:10px;font-size:15px;color:var(--lpk-body)}
+
+.lpk .lpk-status{background:var(--lpk-navy);color:#fff}
+.lpk .lpk-status h2{color:#fff}
+.lpk .lpk-status .lpk-sub{color:#b9c6d8}
+.lpk .lpk-gauge{margin:26px 0 6px}
+.lpk .lpk-gauge-top{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;color:#b9c6d8;margin-bottom:9px}
+.lpk .lpk-gauge-top b{font-size:20px;color:#ffd45e;font-weight:800}
+.lpk .lpk-bar{height:11px;border-radius:999px;background:rgba(255,255,255,.16);overflow:hidden}
+.lpk .lpk-bar span{display:block;height:100%;width:90%;border-radius:999px;background:linear-gradient(90deg,#ffb03a,#e8452c)}
+.lpk .lpk-gauge-note{margin-top:10px;font-size:13px;color:#ffd45e;text-align:right;font-weight:600}
+.lpk .lpk-feed{margin-top:24px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--lpk-r);overflow:hidden}
+.lpk .lpk-feed-head{display:grid;grid-template-columns:78px 66px minmax(0,1fr);gap:8px;padding:11px 14px;font-size:12px;color:#93a5bd;border-bottom:1px solid rgba(255,255,255,.1);font-weight:600}
+.lpk .lpk-feed-view{height:198px;overflow:hidden;-webkit-mask-image:linear-gradient(180deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(180deg,transparent,#000 14%,#000 86%,transparent)}
+.lpk .lpk-feed-track{animation:lpk-roll 26s linear infinite}
+.lpk .lpk-feed-view:hover .lpk-feed-track{animation-play-state:paused}
+@keyframes lpk-roll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+.lpk .lpk-feed-row{display:grid;grid-template-columns:78px 66px minmax(0,1fr);gap:8px;align-items:center;padding:10px 14px;font-size:13px;border-bottom:1px solid rgba(255,255,255,.06)}
+.lpk .lpk-tag{font-size:11px;font-weight:700;padding:3px 0;border-radius:6px;text-align:center}
+.lpk .lpk-tag.req{background:rgba(255,212,94,.16);color:#ffd45e}
+.lpk .lpk-tag.done{background:rgba(60,215,160,.16);color:#5fe0b0}
+.lpk .lpk-feed-row .nm{color:#e6ecf4;font-weight:600}
+.lpk .lpk-feed-row .msg{color:#a9b8cc;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lpk .lpk-feed-note{margin-top:9px;text-align:right;font-size:11.5px;color:#7c8ba3}
+
+.lpk .lpk-why{background:var(--lpk-bg)}
+.lpk .lpk-cards{margin-top:26px;display:grid;gap:12px}
+.lpk .lpk-card{background:var(--lpk-card);border:1px solid var(--lpk-line);border-radius:var(--lpk-r);padding:20px;box-shadow:var(--lpk-shadow)}
+.lpk .lpk-kicker{font-size:12px;font-weight:700;color:var(--lpk-point);letter-spacing:.4px}
+.lpk .lpk-card h3{margin-top:6px;font-size:19px;font-weight:800;letter-spacing:-.5px;color:var(--lpk-navy)}
+.lpk .lpk-card p{margin-top:7px;font-size:15px;color:var(--lpk-body)}
+.lpk .lpk-card p b{color:var(--lpk-ink);font-weight:700}
+.lpk .lpk-cardimg{margin-top:14px;border-radius:10px;overflow:hidden;background:#eef1f5;aspect-ratio:4/3}
+.lpk .lpk-cardimg svg{width:100%;height:100%;object-fit:cover}
+
+.lpk .lpk-qual{background:var(--lpk-card)}
+.lpk .lpk-stars{margin-top:22px;text-align:center;font-size:14px;color:var(--lpk-body);font-weight:600}
+.lpk .lpk-stars .s{display:block;font-size:26px;letter-spacing:5px;color:var(--lpk-gold);margin-bottom:6px}
+.lpk .lpk-qlist{margin-top:24px;display:grid;gap:10px}
+.lpk .lpk-qitem{display:flex;align-items:center;gap:12px;background:var(--lpk-gold-soft);border:1px solid #f0e2c6;border-radius:12px;padding:15px 17px}
+.lpk .lpk-qitem .ic{flex:none;width:32px;height:32px;border-radius:50%;background:var(--lpk-gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800}
+.lpk .lpk-qitem p{font-size:15.5px;font-weight:700;color:#6b4c17;letter-spacing:-.4px}
+
+.lpk .lpk-trust{background:#eef2f7;padding:32px 22px}
+.lpk .lpk-trustbox{background:var(--lpk-card);border:1px solid #d9e1ea;border-radius:var(--lpk-r);padding:22px 20px}
+.lpk .lpk-trustbox h3{font-size:13px;font-weight:700;letter-spacing:.5px;color:#7b8798;text-align:center;padding-bottom:14px;border-bottom:1px solid var(--lpk-line)}
+.lpk .lpk-trustlist{margin-top:16px;display:grid;gap:12px}
+.lpk .lpk-trow{display:grid;grid-template-columns:82px minmax(0,1fr);gap:10px;align-items:baseline}
+.lpk .lpk-trow dt{font-size:13.5px;color:#7b8798;font-weight:600}
+.lpk .lpk-trow dd{font-size:15.5px;color:var(--lpk-navy);font-weight:800;letter-spacing:-.4px}
+.lpk .lpk-tnote{margin-top:16px;padding-top:14px;border-top:1px dashed #d9e1ea;font-size:12.5px;color:#8b95a3;line-height:1.7}
+
+.lpk .lpk-benefit{background:var(--lpk-navy-soft);color:#fff}
+.lpk .lpk-benefit h2{color:#fff}
+.lpk .lpk-benefit .lpk-sub{color:#c3d1e3}
+.lpk .lpk-blist{margin-top:26px;display:grid;gap:11px;counter-reset:lpkb}
+.lpk .lpk-bitem{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:15px 16px}
+.lpk .lpk-bitem::before{counter-increment:lpkb;content:counter(lpkb);flex:none;width:24px;height:24px;border-radius:7px;background:#ffd45e;color:#4a3406;display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:800}
+.lpk .lpk-bitem .txt{flex:1;min-width:0}
+.lpk .lpk-bitem h4{font-size:17px;font-weight:700;letter-spacing:-.4px}
+.lpk .lpk-bitem .txt p{margin-top:4px;font-size:14px;color:#c3d1e3}
+.lpk .lpk-bicon{flex:none;width:50px;height:50px;border-radius:13px;display:flex;align-items:center;justify-content:center}
+.lpk .lpk-bicon svg{width:26px;height:26px}
+.lpk .lpk-caution{margin-top:18px;text-align:center;font-size:13px;color:#ffd45e;font-weight:600}
+
+.lpk .lpk-closing{background:var(--lpk-point-soft);text-align:center}
+.lpk .lpk-closing h2{color:var(--lpk-point-dark)}
+.lpk .lpk-remain{margin-top:16px;display:inline-block;background:#fff;border:1px solid #f6cdc4;border-radius:999px;padding:8px 18px;font-size:14.5px;font-weight:700;color:var(--lpk-point-dark)}
+.lpk .lpk-clock{margin-top:22px;display:flex;justify-content:center;gap:9px}
+.lpk .lpk-unit{background:var(--lpk-navy);border-radius:12px;padding:14px 0;width:82px}
+.lpk .lpk-unit b{display:block;font-size:31px;font-weight:800;color:#fff;font-variant-numeric:tabular-nums;line-height:1.1}
+.lpk .lpk-unit span{display:block;margin-top:3px;font-size:12px;color:#9fb2ca;font-weight:600}
+
+.lpk .lpk-apply{background:var(--lpk-card)}
+.lpk .lpk-formslot{margin-top:22px;border:1px solid var(--lpk-line);border-radius:var(--lpk-r);background:#fff;padding:12px;overflow:hidden}
+.lpk .lpk-formslot iframe{width:100%;border:0;display:block}
+.lpk .lpk-formslot .adsbytenping{width:100%;margin:0 auto;display:block}
+
+.lpk .lpk-privacy{background:var(--lpk-bg);padding:28px 22px}
+.lpk .lpk-privacy details{background:var(--lpk-card);border:1px solid var(--lpk-line);border-radius:12px;padding:15px 17px}
+.lpk .lpk-privacy summary{font-size:14px;font-weight:700;color:var(--lpk-navy);cursor:pointer;list-style:none}
+.lpk .lpk-privacy summary::after{content:"＋";float:right;color:#9aa6b6}
+.lpk .lpk-privacy details[open] summary::after{content:"－"}
+.lpk .lpk-privacy .bd{margin-top:12px;font-size:13px;color:var(--lpk-body);line-height:1.75}
+.lpk .lpk-privacy .bd dt{font-weight:700;color:var(--lpk-ink);margin-top:9px}
+.lpk .lpk-foot{background:#e9edf2;padding:22px;text-align:center;font-size:12px;color:#7b8798;line-height:1.8}
+
+@media (max-width:400px){
+  .lpk .lpk-sec{padding:38px 17px}
+  .lpk .lpk-hero{padding:0 17px 30px}
+  .lpk .lpk-heroimg{margin:0 -17px 18px}
+  .lpk .lpk-hero h1{font-size:25px}
+  .lpk .lpk-sec h2{font-size:20.5px}
+  .lpk .lpk-unit{width:70px}
+  .lpk .lpk-unit b{font-size:26px}
+  .lpk .lpk-feed-head,.lpk .lpk-feed-row{grid-template-columns:70px 56px minmax(0,1fr);gap:6px;padding-left:11px;padding-right:11px}
+  .lpk .lpk-feed-row{font-size:12.5px}
+  .lpk .lpk-tag{font-size:10.5px}
+  .lpk .lpk-qitem p{font-size:14.5px}
+  .lpk .lpk-trust{padding:28px 17px}
+  .lpk .lpk-trow{grid-template-columns:74px minmax(0,1fr);gap:8px}
+  .lpk .lpk-trow dd{font-size:14.5px}
+}
+@media (max-width:340px){
+  .lpk .lpk-hero h1{font-size:23px}
+  .lpk .lpk-unit{width:62px}
+  .lpk .lpk-unit b{font-size:23px}
+}
+@media (prefers-reduced-motion:reduce){
+  .lpk .lpk-feed-track{animation:none}
+}
+</style>
+
+<div class="lpk">
+
+  <div class="lpk-topbar">선착순 <b>30명</b> 한정 · 손해평가사 취득지원 프로그램</div>
+
+  <div class="lpk-hero">
+    <div class="lpk-heroimg">
+      <img src="https://playskang-svg.github.io/lp-hosting/img/hero.svg" alt="농작물 피해 현장을 태블릿으로 조사하는 손해평가사 일러스트" width="800" height="500" decoding="async">
+    </div>
+    <span class="lpk-eyebrow">2026년 취득지원 접수중</span>
+    <h1>경력도 학력도 없이<br><em>한 달</em>이면 따는<br>국가공인 자격증</h1>
+    <p>농어업재해 보험 규모가 매년 커지는 지금,<br>피해 조사 인력이 가장 부족한 시점입니다.</p>
+  </div>
+
+  <div class="lpk-sec lpk-status">
+    <span class="lpk-label" style="color:#ffd45e">LIVE</span>
+    <h2>실시간 접수 현황</h2>
+    <p class="lpk-sub">지원 인원이 소진되면 접수가 조기 마감됩니다.</p>
+
+    <div class="lpk-gauge">
+      <div class="lpk-gauge-top"><span>취득지원 신청</span><span><b id="lpkCnt">27</b> / 30명</span></div>
+      <div class="lpk-bar"><span id="lpkBar" style="width:90%"></span></div>
+      <p class="lpk-gauge-note">잔여 <b id="lpkLeft1">3</b>명</p>
+    </div>
+
+    <div class="lpk-feed">
+      <div class="lpk-feed-head"><span>진행상황</span><span>신청자</span><span>문의사항</span></div>
+      <div class="lpk-feed-view"><div class="lpk-feed-track" id="lpkFeed"></div></div>
+    </div>
+    <p class="lpk-feed-note">* 최근 문의 예시입니다</p>
+  </div>
+
+  <div class="lpk-sec lpk-why">
+    <span class="lpk-label">WHY NOW</span>
+    <h2>왜, 지금 따야 할까요?</h2>
+    <p class="lpk-sub">자격증 하나로 바뀌는 것들</p>
+
+    <div class="lpk-cards">
+      <div class="lpk-card">
+        <span class="lpk-kicker">블루오션</span>
+        <h3>사람이 없어서 못 뽑습니다</h3>
+        <p>기후 변화로 자연재해가 늘면서 <b>농작물 피해 조사 인력이 절대적으로 부족</b>한 상황입니다.</p>
+        <div class="lpk-cardimg">
+          <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="손해평가 조사 인력을 모집하는 공고 게시판 일러스트">
+            <rect width="320" height="240" fill="#eef1f5"/>
+            <rect x="30" y="26" width="262" height="196" rx="12" fill="#fff" stroke="#dfe4ea" stroke-width="1.5"/>
+            <rect x="136" y="18" width="48" height="16" rx="5" fill="#b8863b"/>
+            <rect x="152" y="14" width="16" height="10" rx="3" fill="#96692a"/>
+            <text x="48" y="60" font-family="-apple-system,'Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="700" fill="#16202e">조사 인력 모집</text>
+            <path d="M48 70h224" stroke="#eaeef3" stroke-width="1.5"/>
+            <g font-family="-apple-system,'Apple SD Gothic Neo',sans-serif" font-size="12" fill="#39465a">
+              <g>
+                <rect x="48" y="82" width="224" height="38" rx="8" fill="#f8fafc" stroke="#eaeef3"/>
+                <rect x="60" y="93" width="16" height="16" rx="4" fill="#b8863b"/>
+                <text x="86" y="106">농작물 재해 조사 인력</text>
+                <rect x="216" y="92" width="44" height="18" rx="9" fill="#e8452c"/>
+                <text x="238" y="105" font-size="10.5" font-weight="700" fill="#fff" text-anchor="middle">모집중</text>
+              </g>
+              <g>
+                <rect x="48" y="128" width="224" height="38" rx="8" fill="#f8fafc" stroke="#eaeef3"/>
+                <rect x="60" y="139" width="16" height="16" rx="4" fill="#12805c"/>
+                <text x="86" y="152">지역별 현장 조사원</text>
+                <rect x="216" y="138" width="44" height="18" rx="9" fill="#e8452c"/>
+                <text x="238" y="151" font-size="10.5" font-weight="700" fill="#fff" text-anchor="middle">모집중</text>
+              </g>
+              <g>
+                <rect x="48" y="174" width="224" height="38" rx="8" fill="#f8fafc" stroke="#eaeef3"/>
+                <rect x="60" y="185" width="16" height="16" rx="4" fill="#3f6ea8"/>
+                <text x="86" y="198">손해평가 보조 인력</text>
+                <rect x="216" y="184" width="44" height="18" rx="9" fill="#e8452c"/>
+                <text x="238" y="197" font-size="10.5" font-weight="700" fill="#fff" text-anchor="middle">모집중</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="lpk-card">
+        <span class="lpk-kicker">성과급 구조</span>
+        <h3>번 만큼 그대로 내 수익</h3>
+        <p>조사 건수에 따라 수입이 달라지는 구조라, <b>일한 만큼 그대로 수입</b>이 됩니다.</p>
+      </div>
+
+      <div class="lpk-card">
+        <span class="lpk-kicker">국가공인 자격증</span>
+        <h3>한 번 따면 평생 갑니다</h3>
+        <p>국가가 인정하는 자격이라 <b>정년 없이 평생직장</b>으로 활용할 수 있습니다. 지금이 선점 시점입니다.</p>
+      </div>
+
+      <div class="lpk-card">
+        <span class="lpk-kicker">취업 1순위</span>
+        <h3>자격증이 곧 일자리</h3>
+        <p>협회를 통해 <b>일이 자동으로 배정</b>되는 구조라, 따로 영업할 필요가 없습니다.</p>
+        <div class="lpk-cardimg">
+          <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="자격증 취득에서 협회 연계를 거쳐 일자리 배치까지 이어지는 흐름 일러스트">
+            <rect width="320" height="240" fill="#eef1f5"/>
+            <circle cx="60" cy="100" r="34" fill="#fff" stroke="#e3e8ef" stroke-width="2"/>
+            <rect x="42" y="86" width="36" height="24" rx="4" fill="none" stroke="#b8863b" stroke-width="3"/>
+            <circle cx="60" cy="98" r="6" fill="#b8863b"/>
+            <path d="M96 100h26m-8-7l8 7-8 7" fill="none" stroke="#c3cad4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="160" cy="100" r="34" fill="#fff" stroke="#e3e8ef" stroke-width="2"/>
+            <circle cx="151" cy="93" r="8" fill="none" stroke="#12805c" stroke-width="3"/>
+            <circle cx="169" cy="93" r="8" fill="none" stroke="#12805c" stroke-width="3"/>
+            <path d="M141 114c2-9 7-13 19-13s17 4 19 13" fill="none" stroke="#12805c" stroke-width="3" stroke-linecap="round"/>
+            <path d="M196 100h26m-8-7l8 7-8 7" fill="none" stroke="#c3cad4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="260" cy="100" r="34" fill="#fff" stroke="#e3e8ef" stroke-width="2"/>
+            <path d="M244 98h32v20a4 4 0 0 1-4 4h-24a4 4 0 0 1-4-4z" fill="none" stroke="#e8452c" stroke-width="3"/>
+            <path d="M252 98v-6a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v6" fill="none" stroke="#e8452c" stroke-width="3"/>
+            <text x="60" y="158" font-family="-apple-system,'Apple SD Gothic Neo',sans-serif" font-size="13" fill="#4a5567" text-anchor="middle">자격증 취득</text>
+            <text x="160" y="158" font-family="-apple-system,'Apple SD Gothic Neo',sans-serif" font-size="13" fill="#4a5567" text-anchor="middle">협회 연계</text>
+            <text x="260" y="158" font-family="-apple-system,'Apple SD Gothic Neo',sans-serif" font-size="13" fill="#4a5567" text-anchor="middle">일자리 배치</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="lpk-card">
+        <span class="lpk-kicker">프리랜서 근무 가능</span>
+        <h3>건당 30~60만원</h3>
+        <p>출퇴근 없이 <b>일정을 직접 조율</b>하며 원하는 만큼만 일할 수 있습니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lpk-sec lpk-qual">
+    <span class="lpk-label">응시자격</span>
+    <h2>누가 딸 수 있나요?</h2>
+    <div class="lpk-stars"><span class="s" aria-label="취득 난이도 5점 만점에 1점">★☆☆☆☆</span>취득 난이도</div>
+    <div class="lpk-qlist">
+      <div class="lpk-qitem"><span class="ic">1</span><p>경력 · 학력 관계없이 누구나</p></div>
+      <div class="lpk-qitem"><span class="ic">2</span><p>나이 제한 없음 (60대 취득자 다수)</p></div>
+      <div class="lpk-qitem"><span class="ic">3</span><p>준비 기간 한 달이면 충분</p></div>
+    </div>
+  </div>
+
+  <div class="lpk-trust">
+    <div class="lpk-trustbox">
+      <h3>국가전문자격 · 운영 체계</h3>
+      <dl class="lpk-trustlist">
+        <div class="lpk-trow"><dt>소관부처</dt><dd>농림축산식품부</dd></div>
+        <div class="lpk-trow"><dt>운용기관</dt><dd>농업정책보험금융원</dd></div>
+        <div class="lpk-trow"><dt>시험시행</dt><dd>한국산업인력공단 (Q-Net)</dd></div>
+      </dl>
+      <p class="lpk-tnote">
+        위 기관 정보는 손해평가사 자격제도의 공식 운영 체계이며, 본 페이지는 해당 기관과 무관한
+        민간 교육기관의 수강 상담 안내 페이지입니다.
+      </p>
+    </div>
+  </div>
+
+  <div class="lpk-sec lpk-benefit">
+    <span class="lpk-label" style="color:#ffd45e">선착순 30명 한정</span>
+    <h2>취득지원 4대 혜택</h2>
+    <p class="lpk-sub">이번 회차 신청자에게만 제공됩니다.</p>
+
+    <div class="lpk-blist">
+      <div class="lpk-bitem">
+        <div class="txt"><h4>최신 합격전략집 제공</h4><p>올해 출제 경향을 반영한 핵심 요약본</p></div>
+        <div class="lpk-bicon" style="background:#b8863b">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5c2-1 5-1 8 .5v13c-3-1.5-6-1.5-8-.5z"/><path d="M20 5.5c-2-1-5-1-8 .5v13c3-1.5 6-1.5 8-.5z"/></svg>
+        </div>
+      </div>
+      <div class="lpk-bitem">
+        <div class="txt"><h4>합격 시 수강료 전액 환급</h4><p>합격하면 낸 돈을 그대로 돌려받습니다</p></div>
+        <div class="lpk-bicon" style="background:#e8452c">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6.5" width="19" height="12" rx="2.5"/><circle cx="12" cy="12.5" r="3"/></svg>
+        </div>
+      </div>
+      <div class="lpk-bitem">
+        <div class="txt"><h4>단기 합격 노하우 제공</h4><p>한 달 안에 끝내는 학습 로드맵</p></div>
+        <div class="lpk-bicon" style="background:#2f6feb">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.5.4.8 1 .8 1.6h5.4c0-.6.3-1.2.8-1.6A6 6 0 0 0 12 3z"/></svg>
+        </div>
+      </div>
+      <div class="lpk-bitem">
+        <div class="txt"><h4>협회 주관 일자리 취업연계</h4><p>취득 후 일감 배정까지 연결</p></div>
+        <div class="lpk-bicon" style="background:#12805c">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg>
+        </div>
+      </div>
+    </div>
+    <p class="lpk-caution">※ 수량 소진 시 별도 안내 없이 종료될 수 있습니다 ※</p>
+  </div>
+
+  <div class="lpk-sec lpk-closing">
+    <span class="lpk-label">마감임박</span>
+    <h2>오늘 접수가 마감됩니다</h2>
+    <div class="lpk-remain">선착순 30명 중 <b id="lpkLeft2">3</b>명 남았습니다</div>
+    <div class="lpk-clock">
+      <div class="lpk-unit"><b id="lpkHH">00</b><span>시간</span></div>
+      <div class="lpk-unit"><b id="lpkMM">00</b><span>분</span></div>
+      <div class="lpk-unit"><b id="lpkSS">00</b><span>초</span></div>
+    </div>
+  </div>
+
+  <div class="lpk-sec lpk-apply">
+    <span class="lpk-label">신청하기</span>
+    <h2>1분이면 접수 완료</h2>
+    <p class="lpk-sub">이름과 연락처만 남기시면 담당자가 안내드립니다.</p>
+    <div class="lpk-formslot">
+      <tenping class="adsbytenping" style="width:100%; margin:0 auto; display:block;" tenping-ad-type="CInmlFSNPJoo9rBMK%2brlTg%3d%3d" tenping-ad-client="2%2b6%2bQatzZIWzz1Stk35yznPz7VdY7htnfJ%2ffMWkuBCE2MNmOcEPDKCVjUdU6EejT" tenping-ad-campaign="2025112614190001" tenping-ad-distributionAddID="2026080807520012" tenping-ad-contain_image="false" tenping-ad-contain_logo="false" tenping-ad-contain_Plugin="false" tenping-ad-contain_TpCall="false" tenping-ad-theme="default" tenping-ad-contain_privacy="false"></tenping>
+    </div>
+  </div>
+
+  <div class="lpk-privacy">
+    <details>
+      <summary>개인정보 수집 및 이용 동의 (필수)</summary>
+      <div class="bd">
+        <dl>
+          <dt>수집 항목</dt><dd>이름, 연락처</dd>
+          <dt>수집 목적</dt><dd>자격증 취득 과정 상담 및 안내</dd>
+          <dt>보유 기간</dt><dd>상담 완료 후 즉시 파기 (관계 법령에 따른 보관 의무가 있는 경우 해당 기간 준수)</dd>
+          <dt>제3자 제공</dt><dd>상담 진행을 위해 제휴 교육기관에 제공됩니다.</dd>
+        </dl>
+        동의를 거부할 권리가 있으며, 거부 시 상담 서비스 이용이 제한됩니다.
+      </div>
+    </details>
+  </div>
+
+  <div class="lpk-foot">
+    본 페이지는 광고 목적으로 제작된 페이지입니다.<br>
+    상호 · 사업자등록번호 · 문의처 표기 영역
+  </div>
+</div>
+
+<script>
+(function(){
+  if (window.__lpkInit) return; window.__lpkInit = 1;
+  var ROWS=[
+    ["신청","김*수","부산 가능한가요"],["완료","조*민","신청했어요!"],
+    ["신청","이*수","이직해서 다른거"],["신청","김*형","따는데 얼마나"],
+    ["완료","윤*원","꼭 하고싶어요"],["완료","이*선","61세인데 가능할"],
+    ["완료","한*희","프리랜서 궁금해요"],["완료","김*중","친구가 추천해줘서"],
+    ["완료","연*남","문자 먼저 주세요"],["신청","박*진","주말에도 되나요"]
+  ];
+  var html=ROWS.map(function(r){
+    var cls=r[0]==="완료"?"done":"req", label=r[0]==="완료"?"상담완료":"상담신청";
+    return '<div class="lpk-feed-row"><span class="lpk-tag '+cls+'">'+label+'</span>'+
+           '<span class="nm">'+r[1]+'</span><span class="msg">'+r[2]+'</span></div>';
+  }).join("");
+  var feed=document.getElementById("lpkFeed");
+  if(feed) feed.innerHTML=html+html;
+
+  var TOTAL=30, DONE=27, left=TOTAL-DONE;
+  var c=document.getElementById("lpkCnt"); if(c) c.textContent=DONE;
+  ["lpkLeft1","lpkLeft2"].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=left;});
+  var bf=document.getElementById("lpkBar");
+  if(bf) bf.style.width=Math.round(DONE/TOTAL*100)+"%";
+
+  function pad(n){return n<10?"0"+n:""+n;}
+  function tick(){
+    var now=new Date(), end=new Date(now); end.setHours(24,0,0,0);
+    var s=Math.max(0,Math.floor((end-now)/1000));
+    var h=document.getElementById("lpkHH"), m=document.getElementById("lpkMM"), x=document.getElementById("lpkSS");
+    if(h) h.textContent=pad(Math.floor(s/3600));
+    if(m) m.textContent=pad(Math.floor(s%3600/60));
+    if(x) x.textContent=pad(s%60);
+  }
+  tick(); setInterval(tick,1000);
+})();
+</script>
+<script async src="https://ads.tenping.kr/scripts/adsbytenping.min.js"></script>
+<!-- ================= /손해평가사 취득지원 LP ================= -->
