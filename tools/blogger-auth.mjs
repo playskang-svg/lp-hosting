@@ -2,12 +2,18 @@
 /**
  * 리프레시 토큰 발급 도우미 — 최초 1회만 실행한다.
  *
- *   GOOGLE_CLIENT_ID=... GOOGLE_CLIENT_SECRET=... node tools/blogger-auth.mjs
- *   (또는 .env 에 두 값을 넣고 그냥 실행)
+ * [자동 모드] 브라우저가 있는 PC에서 실행할 때
+ *   node tools/blogger-auth.mjs
+ *   로컬에 임시 서버를 띄워 승인 결과를 직접 받는다.
  *
- * 브라우저가 있는 PC에서 실행해야 한다. 구글 동의 화면을 거쳐야 하기 때문이다.
- * 출력된 GOOGLE_REFRESH_TOKEN 값을 .env 에 넣으면 끝이다. 토큰은 화면에만 찍고
- * 파일로 저장하지 않는다 — 실수로 저장소에 커밋되는 일을 막기 위해서다.
+ * [수동 모드] 서버(원격 컨테이너 등)에서 실행할 때 — 브라우저가 따로 있는 경우
+ *   node tools/blogger-auth.mjs --manual        # 승인 주소를 출력한다
+ *   ...주소를 브라우저에서 열고 승인하면 127.0.0.1 로 이동하며 연결 실패 화면이 뜬다.
+ *      화면은 무시하고 주소창의 code= 뒤 값만 복사한다...
+ *   node tools/blogger-auth.mjs --code <복사한값>   # 토큰으로 교환한다
+ *
+ * 인증 코드는 한 번만 쓸 수 있고 몇 분 안에 만료되니 바로 교환해야 한다.
+ * 토큰은 화면에만 찍고 파일로 저장하지 않는다 — 실수로 커밋되는 것을 막기 위해서다.
  */
 
 import { createServer } from "node:http";
@@ -47,6 +53,62 @@ authUrl.searchParams.set("response_type", "code");
 authUrl.searchParams.set("scope", SCOPE);
 authUrl.searchParams.set("access_type", "offline");
 authUrl.searchParams.set("prompt", "consent"); // 매번 리프레시 토큰을 받기 위해 필요
+
+/* ---------- 코드 → 토큰 교환 ---------- */
+async function exchange(code) {
+  const res = await fetch("https://oauth2.googleapis.com/token", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      code,
+      client_id: CLIENT_ID,
+      client_secret: CLIENT_SECRET,
+      redirect_uri: REDIRECT,
+      grant_type: "authorization_code",
+    }),
+  });
+  const json = await res.json().catch(() => ({}));
+  if (!res.ok || !json.refresh_token) {
+    console.error("오류: 토큰 발급 실패 —", JSON.stringify(json, null, 2));
+    if (json.error === "invalid_grant") {
+      console.error("코드가 이미 사용됐거나 만료됐습니다. --manual 로 주소를 다시 받아 새 코드를 얻으세요.");
+    } else if (!json.refresh_token) {
+      console.error("리프레시 토큰이 오지 않았다면 이미 승인한 앱일 수 있습니다.");
+      console.error("https://myaccount.google.com/permissions 에서 앱 접근 권한을 삭제하고 다시 시도하세요.");
+    }
+    process.exit(1);
+  }
+  return json.refresh_token;
+}
+
+/* ---------- 수동 모드 ---------- */
+const argv = process.argv.slice(2);
+const manual = argv.includes("--manual");
+const codeIdx = argv.indexOf("--code");
+
+if (codeIdx >= 0) {
+  let code = argv[codeIdx + 1];
+  if (!code) { console.error("오류: --code 뒤에 인증 코드를 넣으세요."); process.exit(1); }
+  // 주소창을 통째로 붙여넣은 경우도 받아준다
+  if (code.includes("code=")) code = new URL(code, REDIRECT).searchParams.get("code") || code;
+  code = decodeURIComponent(code);
+  const token = await exchange(code);
+  console.log("\n발급 완료. 아래 줄을 .env 에 추가하세요:\n");
+  console.log(`GOOGLE_REFRESH_TOKEN=${token}\n`);
+  console.log("※ 이 값은 비밀번호와 같습니다. 저장소에 커밋하지 마세요.");
+  process.exit(0);
+}
+
+if (manual) {
+  console.log("\n[1] 아래 주소를 브라우저에서 열고 구글 계정으로 승인하세요.\n");
+  console.log(authUrl.toString());
+  console.log("\n[2] 승인하면 127.0.0.1 로 이동하면서 '연결할 수 없음' 화면이 뜹니다. 정상입니다.");
+  console.log("    화면은 무시하고 주소창에서 code= 뒤의 값을 복사하세요.\n");
+  console.log("[3] 복사한 값으로 아래를 실행하세요 (주소창 전체를 넣어도 됩니다).\n");
+  console.log("    node tools/blogger-auth.mjs --code '<복사한값>'\n");
+  console.log("※ 코드는 한 번만 쓸 수 있고 몇 분 안에 만료됩니다.");
+  process.exit(0);
+}
 
 console.log("\n아래 주소를 브라우저에서 열고 구글 계정으로 로그인하세요.\n");
 console.log(authUrl.toString());
